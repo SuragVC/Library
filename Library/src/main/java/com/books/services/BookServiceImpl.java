@@ -15,6 +15,14 @@ public class BookServiceImpl implements BookServices{
 	@Autowired
 	private BooksDAO booksDao;
 	
+	public BookServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public BookServiceImpl(BookServiceImpl controler) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public List<Book> getAllBooks() throws BooksNotFoundException {
 		List<Book> list = booksDao.findAll();

@@ -8,7 +8,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.Builder;
+
 @Entity
+@Builder
 public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
