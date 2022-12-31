@@ -16,20 +16,21 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.books.exceptions.BooksNotFoundException;
 import com.books.model.Book;
 import com.books.services.BookServices;
-@CrossOrigin(origins ="http://localhost:3000/")
+
+import lombok.Data;
+@CrossOrigin(origins ="*")
 @RestController
 @RequestMapping("/bookservice")
+@Data
 public class BooksController {
 	@Autowired
 	private BookServices bookService;
 	
-	public BooksController(BooksController controler) {
-		// TODO Auto-generated constructor stub
-	}
 
 	@PostMapping("/books")
 	public ResponseEntity<Book>createBook(@RequestBody @Valid Book book){
