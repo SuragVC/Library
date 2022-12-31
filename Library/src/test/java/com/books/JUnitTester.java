@@ -44,7 +44,7 @@ public class JUnitTester {
     void initService() {
     	System.out.println("New method started...");
         closeable = MockitoAnnotations.openMocks(this);
-        controler = new BooksController(controler);
+        controler = new BooksController();
     }
 
     @AfterEach
