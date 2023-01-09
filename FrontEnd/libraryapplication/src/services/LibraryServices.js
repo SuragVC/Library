@@ -1,9 +1,18 @@
 import axios  from 'axios';
-const Get_All_BookAPI='http://localhost:8080/bookservice/books';
-
+const BOOKS_API_BASE_URL='http://localhost:8080/bookservice/books';
 class Library{
-    getAllbooks(){
-        return axios.get(Get_All_BookAPI);
+    getAllBooks(pageNo){
+        let PAGINATION_API_URL='http://localhost:8080/bookservice/books/page?pageNo='+pageNo;
+        return axios.get(PAGINATION_API_URL);
+    }
+    createBooks(books){
+        return axios.post(BOOKS_API_BASE_URL,books);
+    }
+    updateBooks(books){
+        return axios.put(BOOKS_API_BASE_URL,books);
+    }
+    getBookByID(book_id){
+        return axios.get(BOOKS_API_BASE_URL+"/"+book_id);
     }
 }
 export default new Library();

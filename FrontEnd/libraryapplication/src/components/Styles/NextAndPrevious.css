@@ -1,0 +1,19 @@
+#divForButtons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 10px;
+    height: 60px;
+}
+#nextAndPrevious{
+    margin: 4px;
+    border-radius: 10px;
+    background-color: rgb(10, 10, 11);
+    border: none;
+    color: white;
+    height: 50px;
+    width: 70px;
+}
+#nextAndPrevious:hover{
+    background-color: red;
+}
