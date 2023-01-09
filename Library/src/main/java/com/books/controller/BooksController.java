@@ -1,10 +1,9 @@
 package com.books.controller;
 
-import java.util.List;
 
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,15 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
 import com.books.exceptions.BooksNotFoundException;
 import com.books.model.Book;
 import com.books.services.BookServices;
 
 import lombok.Data;
-@CrossOrigin(origins ="*")
+@CrossOrigin(origins ="http://localhost:3000")
 @RestController
 @RequestMapping("/bookservice")
 @Data
@@ -38,10 +36,10 @@ public class BooksController {
 		return new ResponseEntity<Book>(savedBook,HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/books")
-	public ResponseEntity<List<Book>>getAllBooks() throws BooksNotFoundException{
-		List<Book> list = bookService.getAllBooks();
-		return new ResponseEntity<List<Book>>(list,HttpStatus.ACCEPTED);
+	@GetMapping("/books/page")
+	public ResponseEntity<Page<Book>>getAllBooks(@RequestParam int pageNo) throws BooksNotFoundException{
+		Page<Book> page = bookService.getAllBooks(pageNo);
+		return new ResponseEntity<Page<Book>>(page,HttpStatus.ACCEPTED);
 	}
 	
 	@GetMapping("/books/{Books_Id}")

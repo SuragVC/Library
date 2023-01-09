@@ -36,6 +36,9 @@ public class Book {
 	private Integer pages;
 	@NotNull
 	private Integer price;
+	@NotNull
+	@NotBlank
+	private String url_link;
 	public Integer getBook_Id() {
 		return Book_Id;
 	}
@@ -78,12 +81,18 @@ public class Book {
 	public void setPrice(Integer price) {
 		this.price = price;
 	}
+	public String getUrl_link() {
+		return url_link;
+	}
+	public void setUrl_link(String url_link) {
+		this.url_link = url_link;
+	}
 	public Book(Integer book_Id,
 			@NotBlank @NotNull @Size(min = 4, max = 20, message = "Name length mustbe between 4 to 20") String name,
 			@NotBlank @NotNull @Size(min = 4, max = 20, message = "Author length mustbe between 4 to 20") String author,
 			@NotBlank @NotNull @Size(min = 4, max = 45, message = "Publication length mustbe between 4 to 45") String publication,
 			@NotBlank @NotNull @Size(min = 4, max = 45, message = "Category length mustbe between 4 to 45") String category,
-			@NotNull Integer pages, @NotNull Integer price) {
+			@NotNull Integer pages, @NotNull Integer price,@NotBlank @NotNull String url_link) {
 		super();
 		Book_Id = book_Id;
 		this.name = name;
@@ -92,11 +101,14 @@ public class Book {
 		this.category = category;
 		this.pages = pages;
 		this.price = price;
+		this.url_link=url_link;
+		
 	}
 	public Book() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 	
 }

@@ -139,6 +139,7 @@
 				</dependencies>
 			</plugin>
 		</plugins>
+		<finalName>LibraryApplicationDocker</finalName>
 	</build>
 
 </project>

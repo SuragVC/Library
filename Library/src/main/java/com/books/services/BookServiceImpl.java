@@ -1,9 +1,12 @@
 package com.books.services;
 
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.books.DAO.BooksDAO;
@@ -24,12 +27,13 @@ public class BookServiceImpl implements BookServices{
 	}
 
 	@Override
-	public List<Book> getAllBooks() throws BooksNotFoundException {
-		List<Book> list = booksDao.findAll();
-		if(list.isEmpty()) {
+	public Page<Book> getAllBooks(int pageNo) throws BooksNotFoundException {
+		Pageable pageable = PageRequest.of(pageNo,10);
+		Page<Book> page = booksDao.findAll(pageable);
+		if(page.isEmpty()) {
 			throw new BooksNotFoundException("No Books Added to the library");
 		}else {
-			return list;
+			return page;
 		}
 	}
 
@@ -73,6 +77,7 @@ public class BookServiceImpl implements BookServices{
 			savedbook.setPages(book.getPages());
 			savedbook.setPrice(book.getPrice());
 			savedbook.setPublication(book.getPublication());
+			savedbook.setUrl_link(book.getUrl_link());
 			booksDao.save(savedbook);
 			return savedbook;
 			
