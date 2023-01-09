@@ -10,6 +10,7 @@ The library is an application that runs on react frontend and Spring Backend and
 <p>-> MySQL(Database)</p>
 <p>-> React</p>
 <p>-> ChakraUI</p> 
+<p>-> Bootstrap</p> 
 <p>-> Tomcat(Server)</p> 
 <br>
 <h4>Features :-</h4>
