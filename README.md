@@ -1,4 +1,4 @@
-<h1 align="center">Library</h1>
+<h1 align="center">Library <image src="https://media.tenor.com/AC2N2eQeAjkAAAAi/look-it-up-books.gif" width="50px" height="50px"/></h1>
 The library is an application that runs on react frontend and Spring Backend and MySql as a database. It has some basic CRUD operation APIs which are running on port number  8080 and the frontend part runs on the react default port.Using this application user can login and add Books to library. The viewers can visit the website and read the books available on the application.
 <br>
 <h4>Tech Stack :-</h4>
@@ -20,6 +20,9 @@ The library is an application that runs on react frontend and Spring Backend and
 <p>* Pagination on the backend.</P>
 <p>* React Frontend (Runs on Port no : http://localhost:3000).</p>
 <br>
+<p align="center"><image src="https://media.tenor.com/XrjC6YgNotUAAAAi/novel-books.gif" width="200px" height="200px"/></p>
+
+<br>
 <h3 align="center">Backend</h3>
 <img src="https://i.imgur.com/7GJICYy.png"/>
 <img src="https://i.imgur.com/amrLyTn.png"/>
@@ -38,3 +41,7 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.username=root
 spring.datasource.password=root
 <p>then run backend on any IDE(STS preferred). </p>
+<br>
+<p align="center"><image src="https://media.tenor.com/THSSOLP5yUkAAAAi/anime-animated-text.gif" width="400px" height="200px"/></p>
+
+<br>
